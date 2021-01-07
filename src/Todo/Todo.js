@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Input from './Input';
+import {ButtonAdd, ButtonDelete} from './Button';
 
 export default class Todo extends Component {
   constructor(props){
@@ -44,10 +45,10 @@ export default class Todo extends Component {
           change={this.inputChange}
           vallue={this.state.inputValue}
         />
-        <button onClick={this.buttonSubmit}>Add task</button>
+        <ButtonAdd click1={this.buttonSubmit} />
         <ol>
           {this.state.todos.map((todo, index) => (
-            <li key={index}><button onClick={this.delHandler}>del</button>{todo}</li>
+            <li key={index}>{todo}<ButtonDelete click2={this.delHandler} /></li>
           ))}
         </ol>
       </div>
